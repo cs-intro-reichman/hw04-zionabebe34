@@ -48,13 +48,7 @@ public class StringOps {
     public static String capVowelsLowRest (String string) {
         String vowels = "aeiou"; // containing the vowels as one string 
         String str = ""; // empty string for store the new string 
-<<<<<<< HEAD
 
-    
-=======
-        
-        char first = string.charAt(0);
->>>>>>> b6f135c42a288c974d670029368392df746591db
         //loop that run on the string and check if the specific char is match what we looking for 
         for ( int i = 0; i < string.length(); i ++ ) {
             char ch = string.charAt(i); 
