@@ -1,8 +1,8 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int[] array = {0,1,2,3,5};
-        System.out.println(findMissingInt(array));  //test the missing int 
-        //System.out.println(secondMaxValue(array)); //test the secondMaxValue 
+        int[] array = {1,-2,3,-4,-5};
+        // System.out.println(findMissingInt(array));  //test the missing int 
+        System.out.println(secondMaxValue(array)); //test the secondMaxValue 
         //System.out.println(isSorted(array));//test the isSorted
         
     }
@@ -37,16 +37,17 @@ public class ArrayOps {
                     max = num2; 
                 }
             }
-        }
+        } 
 
         int sumMax = max + array[0]; 
+       
         int secondMax = 0; 
         
 
         for ( int q = 1; q  < array.length; q++) { // it start from 1 because i made the operation on index 0
-            if ( sumMax > ( max + array[q])) {
-                max = max;
-            } else if ( sumMax < ( max + array[q])) {
+            if ( sumMax > ( max + array[q]) || sumMax == (max + array[q])) {
+                continue;
+            } else if ( sumMax < ( max + array[q]) && array[q] != max) {
                 sumMax = max + array[q]; 
                 secondMax = array[q];
             } 
@@ -54,7 +55,6 @@ public class ArrayOps {
 
          }
 
-        
         return secondMax;
     }
 
