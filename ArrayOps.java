@@ -1,15 +1,17 @@
 public class ArrayOps {
     public static void main(String[] args) {
         int[] array = {2,8,3,7,8}; 
-        int [] array2 = {3 ,1 ,1 ,3 ,1};
-        int [] array3 = {1 , 3}; 
+        int [] array2 = {1,2,3,-4,5};
+        int [] array3 = {1,3,-4,5}; 
        
-         //System.out.println(findMissingInt(array));  //test the missing int 
+        //System.out.println(findMissingInt(array));  //test the missing int 
+
         //System.out.println(secondMaxValue(array)); //test the secondMaxValue 
+
         //System.out.println(isSorted(array));//test the isSorted
 
         boolean contain = containsTheSameElements(array2, array3);
-        System.out.println(contain);
+        System.out.println(contain); // test the contain 
         
     }
     
@@ -70,8 +72,10 @@ public class ArrayOps {
     }
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
-        boolean isContain = true; 
-        if ( array1.length < array2.length  ) {
+        boolean isContain = true; //default value
+
+        //check the option which arrays get the short length for the Comparison
+        if ( array1.length < array2.length ||  array1.length == array2.length ) {
             for ( int i = 0; i < array1.length; i++) {
                 if ( indexOf(array2, array1[i]) == -1){
                     isContain = false;
@@ -82,7 +86,6 @@ public class ArrayOps {
         } else {
             for ( int i = 0; i < array2.length; i++) {
                 if ( indexOf(array1, array2[i]) == -1) {
-                   
                     isContain = false;
                     break; 
                 }
@@ -106,7 +109,7 @@ public class ArrayOps {
                 break;
             }
         }
-        return false;
+        return isSorted;
     }
 
 
@@ -119,6 +122,8 @@ public class ArrayOps {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == target) {
                 return i;
+            } else { 
+                return -1; 
             }
         }
         return -1;
