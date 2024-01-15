@@ -1,7 +1,8 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int[] array = {1,-2,3,-4,-5};
-        // System.out.println(findMissingInt(array));  //test the missing int 
+        int[] array = {2,8,3,7,8};
+       
+         //System.out.println(findMissingInt(array));  //test the missing int 
         System.out.println(secondMaxValue(array)); //test the secondMaxValue 
         //System.out.println(isSorted(array));//test the isSorted
         
@@ -24,6 +25,7 @@ public class ArrayOps {
 
     public static int secondMaxValue(int [] array) {
         int max = 0; 
+        int indexMax = 0;
         for ( int i = 0; i < array.length; i++) {
             int num = array[i];
 
@@ -31,29 +33,33 @@ public class ArrayOps {
                 int num2 = array[k]; 
                 if ( num > num2 ) {
                     max = num; 
+                    indexMax = i;
                 } else if (num == num2) {
                     max = num;
+                    indexMax = i;
                 } else {
                     max = num2; 
+                    indexMax = k;
                 }
             }
         } 
+    
 
         int sumMax = max + array[0]; 
-       
         int secondMax = 0; 
-        
+       // System.out.println(indexMax);
+       // System.out.println(indexOf(array, 5));
 
-        for ( int q = 1; q  < array.length; q++) { // it start from 1 because i made the operation on index 0
-            if ( sumMax > ( max + array[q]) || sumMax == (max + array[q])) {
-                continue;
-            } else if ( sumMax < ( max + array[q]) && array[q] != max) {
-                sumMax = max + array[q]; 
-                secondMax = array[q];
-            } 
-            
-
-         }
+        for ( int i : array) {
+            if ( i == max && indexOf(array, i) != indexMax ) {
+                secondMax = i;
+                
+            } else if ( sumMax < ( i + max) && i != max ) {
+                secondMax = i;
+            } else {
+                continue; 
+            }
+        }
 
         return secondMax;
     }
@@ -78,5 +84,16 @@ public class ArrayOps {
         }
         return false;
     }
+
+    //for helping to find the index of variable
+    public static int indexOf(int[] arr, int target) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    
 
 }
