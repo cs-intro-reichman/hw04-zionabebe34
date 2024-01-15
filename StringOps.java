@@ -47,6 +47,7 @@ public class StringOps {
 
     public static String capVowelsLowRest (String string) {
         String vowels = "aeiou"; // containing the vowels as one string 
+<<<<<<< HEAD
         String str = ""; // empty string for store the new string 
         
         char first = string.charAt(0);
@@ -60,6 +61,20 @@ public class StringOps {
         
         
     
+=======
+        String s = ""; // empty string for store the new string 
+        
+        char first = string.charAt(0);
+        if (vowels.indexOf(first) != -1 ) {
+            first = (char) (string.charAt(0) - 32); 
+        } else {
+            if ( first <= 'Z' || first <= 'A') {
+                first = (char) (string.charAt(0) + 32); 
+            }
+        }
+        
+        s+= first; 
+>>>>>>> cf34cbfde8728f257c3ec53046a28513b2496c4a
         
         
 
