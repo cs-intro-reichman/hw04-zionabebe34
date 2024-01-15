@@ -49,7 +49,7 @@ public class StringOps {
         String vowels = "aeiou"; // containing the vowels as one string 
         String s = ""; // empty string for store the new string 
         s+= ( vowels.indexOf((string.charAt(0))) != -1)? ((char) (string.charAt(0) - 32)):( (char) string.charAt(0));
-        System.out.println(s);
+        
         
 
         //loop that run on the string and check if the specific char is match what we looking for 
