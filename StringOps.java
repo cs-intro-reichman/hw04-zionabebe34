@@ -22,9 +22,14 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-       String capVowels=  capVowelsLowRest("One two tHRee world"); //test the capsVowels
-       String camelCase = camelCase(" hello");  //test the camelCase 
-       System.out.println(camelCase); //test for camelCase
+       String capVowels =  capVowelsLowRest("One two tHRee world"); //test the capsVowels
+       System.out.println(capVowels);
+
+
+       //String camelCase = camelCase(" hello");  //test the camelCase 
+       //System.out.println(camelCase); //test for camelCase
+
+
        //System.out.println(capVowels);
        /*int [] index = allIndexOf("hello", 'l'); //test the all  indexof
        for ( int i = 0; i < index.length; i++) {
@@ -53,9 +58,7 @@ public class StringOps {
             } else {
                     s +=  (ch >= 'A'  && ch <= 'Z')?( (char) ( ch + 32 )):( (char) ch ) ; 
             } 
-             if ( s.length() == string.length()){ // for prevent an error about get out from index 
-                    break;
-            }
+             
         }
     
         return s;
@@ -76,7 +79,7 @@ public class StringOps {
                 s+= (char) (c -32); 
             }else if ( c == ' ') {
                 if ( string.charAt(0) == c) {
-                    
+
                 }
                 continue; 
             }else{
