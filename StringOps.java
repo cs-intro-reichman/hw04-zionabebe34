@@ -47,34 +47,39 @@ public class StringOps {
 
     public static String capVowelsLowRest (String string) {
         String vowels = "aeiou"; // containing the vowels as one string 
-        String s = ""; // empty string for store the new string 
+        String str = ""; // empty string for store the new string 
         
         char first = string.charAt(0);
-        if (vowels.indexOf(first) != -1 ) {
-            first = (char) (string.charAt(0) - 32); 
-        } else {
-            if ( first <= 'Z' || first <= 'A') {
-                first = (char) (string.charAt(0) + 32); 
-            }
-        }
+
         
-        s+= first; 
+
+
+        
+
+        
+        
+        
+    
         
         
 
         //loop that run on the string and check if the specific char is match what we looking for 
-        for ( int i = 1; i < string.length(); i ++ ) {
+        for ( int i = 0; i < string.length(); i ++ ) {
             char ch = string.charAt(i); 
             if ( vowels.indexOf(ch) != -1) { // it mean its contain in vowel 
                     ch = (char) (ch - 32); // change from lower the uuper 
-                    s += ch;
-            } else {
-                    s +=  (ch >= 'A'  && ch <= 'Z')?( (char) ( ch + 32 )):( (char) ch ) ; 
+                    str += ch;
+            } else if ( ( vowels.indexOf((char) ch + 32 ) != -1)) {
+                str+=ch;
+
+            }else {
+                str +=  (ch >= 'A'  && ch <= 'Z' )?( (char) ( ch + 32 )):( (char) ch ) ; 
+         
             } 
              
         }
     
-        return s;
+        return str;
     }
 
     public static String camelCase (String string) {
