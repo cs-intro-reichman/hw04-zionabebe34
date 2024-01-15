@@ -22,9 +22,11 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-       //System.out.println(capVowelsLowRest("“One two tHRee world” "));
-       System.out.println(camelCase("HELLO       world"));
-       /*int [] index = allIndexOf("hello", 'l');
+       String capVowels=  capVowelsLowRest("One two tHRee world"); //test the capsVowels
+       String camelCase = camelCase("tWo    wordS");  //test the camelCase 
+       System.out.println(camelCase);
+       System.out.println(capVowels);
+       /*int [] index = allIndexOf("hello", 'l'); //test the all  indexof
        for ( int i = 0; i < index.length; i++) {
            System.out.print(index[i] + " ");
        }*/
