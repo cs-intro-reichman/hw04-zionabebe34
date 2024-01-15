@@ -1,10 +1,15 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int[] array = {2,8,3,7,8};
+        int[] array = {2,8,3,7,8}; 
+        int [] array2 = {3 ,1 ,1 ,3 ,1};
+        int [] array3 = {1 , 3}; 
        
          //System.out.println(findMissingInt(array));  //test the missing int 
-        System.out.println(secondMaxValue(array)); //test the secondMaxValue 
+        //System.out.println(secondMaxValue(array)); //test the secondMaxValue 
         //System.out.println(isSorted(array));//test the isSorted
+
+        boolean contain = containsTheSameElements(array2, array3);
+        System.out.println(contain);
         
     }
     
@@ -65,8 +70,27 @@ public class ArrayOps {
     }
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
-        // Write your code here:
-        return false;
+        boolean isContain = true; 
+        if ( array1.length < array2.length  ) {
+            for ( int i = 0; i < array1.length; i++) {
+                if ( indexOf(array2, array1[i]) == -1){
+                    isContain = false;
+                    break;
+                }
+            }
+
+        } else {
+            for ( int i = 0; i < array2.length; i++) {
+                if ( indexOf(array1, array2[i]) == -1) {
+                   
+                    isContain = false;
+                    break; 
+                }
+            }
+            
+        }
+
+        return isContain;
     }
 
     public static boolean isSorted(int [] array) {
@@ -85,6 +109,11 @@ public class ArrayOps {
         return false;
     }
 
+
+
+
+
+
     //for helping to find the index of variable
     public static int indexOf(int[] arr, int target) {
         for (int i = 0; i < arr.length; i++) {
@@ -94,6 +123,10 @@ public class ArrayOps {
         }
         return -1;
     }
+
+    
+
+    
     
 
 }
