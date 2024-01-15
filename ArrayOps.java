@@ -1,6 +1,6 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int[] array = {1,5,3}; 
+        int[] array = {1,1,3}; 
         int [] array2 = {1,2,3,-4,5};
         int [] array3 = {1,3,-4,5}; 
        
