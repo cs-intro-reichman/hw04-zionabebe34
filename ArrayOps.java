@@ -1,6 +1,6 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int[] array = {2,8,3,7,8}; 
+        int[] array = {1,5,3}; 
         int [] array2 = {1,2,3,-4,5};
         int [] array3 = {1,3,-4,5}; 
        
@@ -8,10 +8,12 @@ public class ArrayOps {
 
         //System.out.println(secondMaxValue(array)); //test the secondMaxValue 
 
-        //System.out.println(isSorted(array));//test the isSorted
+        System.out.println(isSorted(array));//test the isSorted
 
         boolean contain = containsTheSameElements(array2, array3);
-        System.out.println(contain); // test the contain 
+        //System.out.println(contain); // test the contain 
+
+    
         
     }
     
@@ -109,15 +111,25 @@ public class ArrayOps {
 
     public static boolean isSorted(int [] array) {
         boolean isSorted = false; 
-        int max = array[0];
+        int num = array[0];
 
-        for ( int i = 1; i < array.length; i++) {
-            if ( max > array[i]) {
-                max = array[i]; 
-                isSorted = true; 
-            } else {
-                isSorted = false;
-                break;
+        if ( num > array[1]) {
+            for ( int i = 1; i < array.length - 1; i++ ) {
+                if ( array[i] > array[i+1]) {
+                    isSorted = true;
+                } else {
+                    isSorted = false; 
+                    break;
+                }
+            }
+        } else {
+            for ( int i = 1; i < array.length - 1; i++) {
+                if( array[i] < array[i + 1]) {
+                    isSorted = true;
+                } else {
+                    isSorted = false; 
+                    break; 
+                }
             }
         }
         return isSorted;
