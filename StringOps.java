@@ -22,7 +22,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-       String capVowels =  capVowelsLowRest("Hello World"); //test the capsVowels
+       String capVowels =  capVowelsLowRest("Oello World"); //test the capsVowels
        System.out.println(capVowels);
 
 
@@ -47,37 +47,12 @@ public class StringOps {
 
     public static String capVowelsLowRest (String string) {
         String vowels = "aeiou"; // containing the vowels as one string 
-<<<<<<< HEAD
         String str = ""; // empty string for store the new string 
         
         char first = string.charAt(0);
-
-        
-
-
-        
-
-        
-        
+ 
         
     
-=======
-        String s = ""; // empty string for store the new string 
-        
-        char first = string.charAt(0);
-        if (vowels.indexOf(first) != -1 ) {
-            first = (char) (string.charAt(0) - 32); 
-        } else {
-            if ( first <= 'Z' || first <= 'A') {
-                first = (char) (string.charAt(0) + 32); 
-            }
-        }
-        
-        s+= first; 
->>>>>>> cf34cbfde8728f257c3ec53046a28513b2496c4a
-        
-        
-
         //loop that run on the string and check if the specific char is match what we looking for 
         for ( int i = 0; i < string.length(); i ++ ) {
             char ch = string.charAt(i); 
