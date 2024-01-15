@@ -23,11 +23,11 @@ public class StringOps {
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
        //System.out.println(capVowelsLowRest("“One two tHRee world” "));
-       //System.out.println(camelCase("camel case "));
-       int [] index = allIndexOf("hello", 'l');
+       System.out.println(camelCase("HELLO       world"));
+       /*int [] index = allIndexOf("hello", 'l');
        for ( int i = 0; i < index.length; i++) {
            System.out.print(index[i] + " ");
-       }
+       }*/
        
        
        
@@ -68,13 +68,16 @@ public class StringOps {
         // create a string without space and after then change the first letter each word to uppercase 
         for ( int i = 1; i < string.length(); i++) {
             char c = string.charAt(i); 
-            if ( c == ' ') {
-                continue;
-            } else  if (string.charAt(i - 1) == ' '){
-                s+= (string.charAt(i) > 'Z')?( (char) (string.charAt(i) - 32) ):( string.charAt(i)); 
-            } else { 
+            if ( c  >= 'A'  && c <= 'Z') {
+                s+= (char) (string.charAt(i) + 32);
+            } else if ( c > 'Z' && string.charAt(i-1) == ' ') {
+                s+= (char) (c -32); 
+            }else if ( c == ' ') {
+                continue; 
+            }else{
                 s+=c; 
             }
+            
         
         }
 
