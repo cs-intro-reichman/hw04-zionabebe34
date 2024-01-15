@@ -22,7 +22,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-       String capVowels =  capVowelsLowRest("One two tHRee world"); //test the capsVowels
+       String capVowels =  capVowelsLowRest("one two tHRee world"); //test the capsVowels
        System.out.println(capVowels);
 
 
@@ -48,9 +48,12 @@ public class StringOps {
     public static String capVowelsLowRest (String string) {
         String vowels = "aeiou"; // containing the vowels as one string 
         String s = ""; // empty string for store the new string 
+        s+= ( vowels.indexOf((string.charAt(0))) != -1)? ((char) (string.charAt(0) - 32)):( (char) string.charAt(0));
+        System.out.println(s);
+        
 
         //loop that run on the string and check if the specific char is match what we looking for 
-        for ( int i = 0; i < string.length(); i ++ ) {
+        for ( int i = 1; i < string.length(); i ++ ) {
             char ch = string.charAt(i); 
             if ( vowels.indexOf(ch) != -1) { // it mean its contain in vowel 
                     ch = (char) (ch - 32); // change from lower the uuper 
