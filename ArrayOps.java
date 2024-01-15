@@ -77,7 +77,13 @@ public class ArrayOps {
         //check the option which arrays get the short length for the Comparison
         if ( array1.length < array2.length ||  array1.length == array2.length ) {
             for ( int i = 0; i < array1.length; i++) {
-                if ( indexOf(array2, array1[i]) == -1){
+                if ( indexOf(array2, array1[i]) != -1){
+                    if ( indexOf(array1, array2[i]) == -1) {
+                        isContain = false;
+                        break; 
+                    }
+                    
+                } else {
                     isContain = false;
                     break;
                 }
@@ -85,7 +91,12 @@ public class ArrayOps {
 
         } else {
             for ( int i = 0; i < array2.length; i++) {
-                if ( indexOf(array1, array2[i]) == -1) {
+                if ( indexOf(array1, array2[i]) != -1) {
+                    if ( indexOf(array2, array1[i]) == -1) {
+                        isContain = false; 
+                        break; 
+                    }
+                }else {
                     isContain = false;
                     break; 
                 }
