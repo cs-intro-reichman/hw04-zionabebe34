@@ -22,12 +22,12 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-       String capVowels =  capVowelsLowRest("One two tHRee world"); //test the capsVowels
-       System.out.println(capVowels);
+       //String capVowels =  capVowelsLowRest("One two tHRee world"); //test the capsVowels
+       //System.out.println(capVowels);
 
 
-       //String camelCase = camelCase(" hello");  //test the camelCase 
-       //System.out.println(camelCase); //test for camelCase
+       String camelCase = camelCase(" tWo    wordS hh");  //test the camelCase 
+       System.out.println(camelCase); //test for camelCase
 
 
        //System.out.println(capVowels);
@@ -48,6 +48,7 @@ public class StringOps {
     public static String capVowelsLowRest (String string) {
         String vowels = "aeiou"; // containing the vowels as one string 
         String str = ""; // empty string for store the new string 
+
 
         //loop that run on the string and check if the specific char is match what we looking for 
         for ( int i = 0; i < string.length(); i ++ ) {
@@ -70,8 +71,20 @@ public class StringOps {
 
     public static String camelCase (String string) {
         String s = ""; 
-        char first = (string.charAt(0) > 'Z')?((string.charAt(0)) ):( ( char) (string.charAt(0) + 32)) ; 
-        s+=first; // insert the first letter to the return string
+        //char first = (string.charAt(0) > 'Z')?((string.charAt(0)) ):( ( char) (string.charAt(0) + 32)) ; 
+        char first = string.charAt(0); 
+        if ( first == ' ') {
+            first = string.charAt(1);
+        } else {
+            s+=first; // insert the first letter to the return string
+
+        }
+
+        
+        
+         
+        
+        
         
 
         // create a string without space and after then change the first letter each word to uppercase 
