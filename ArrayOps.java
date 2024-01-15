@@ -1,9 +1,9 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int[] array = {7,5,4,3,2};
-        //System.out.println(findMissingInt(array));
-        //System.out.println(secondMaxValue(array));
-        System.out.println(isSorted(array));
+        int[] array = {0,1,2,3,5};
+        System.out.println(findMissingInt(array));  //test the missing int 
+        //System.out.println(secondMaxValue(array)); //test the secondMaxValue 
+        //System.out.println(isSorted(array));//test the isSorted
         
     }
     
@@ -11,11 +11,11 @@ public class ArrayOps {
         int missNum = 0; // define a number for return a value
         
         for ( int i = 0; i < array.length; i++) {
-            missNum = i; // the value will be [0, array.length)
-            if ( array[i] == missNum) {// compare between the value in the array index to the missNum
-                continue; 
-            } else { 
+            if ( array[i] != missNum) {// compare between the value in the array index to the missNum
                 return missNum; 
+             
+            } else {
+                missNum++;
             }
         }
 

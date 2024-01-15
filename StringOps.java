@@ -23,9 +23,9 @@ public class StringOps {
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
        String capVowels=  capVowelsLowRest("One two tHRee world"); //test the capsVowels
-       String camelCase = camelCase("tWo    wordS");  //test the camelCase 
-       System.out.println(camelCase);
-       System.out.println(capVowels);
+       String camelCase = camelCase(" hello");  //test the camelCase 
+       System.out.println(camelCase); //test for camelCase
+       //System.out.println(capVowels);
        /*int [] index = allIndexOf("hello", 'l'); //test the all  indexof
        for ( int i = 0; i < index.length; i++) {
            System.out.print(index[i] + " ");
@@ -75,6 +75,9 @@ public class StringOps {
             } else if ( c > 'Z' && string.charAt(i-1) == ' ') {
                 s+= (char) (c -32); 
             }else if ( c == ' ') {
+                if ( string.charAt(0) == c) {
+                    
+                }
                 continue; 
             }else{
                 s+=c; 
