@@ -50,9 +50,6 @@ public class StringOps {
         String str = ""; // empty string for store the new string 
         
         char first = string.charAt(0);
- 
-        
-    
         //loop that run on the string and check if the specific char is match what we looking for 
         for ( int i = 0; i < string.length(); i ++ ) {
             char ch = string.charAt(i); 
