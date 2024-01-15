@@ -22,7 +22,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-       String capVowels =  capVowelsLowRest("Oello World"); //test the capsVowels
+       String capVowels =  capVowelsLowRest("One two tHRee world"); //test the capsVowels
        System.out.println(capVowels);
 
 
