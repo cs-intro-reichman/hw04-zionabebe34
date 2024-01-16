@@ -22,12 +22,12 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-       //String capVowels =  capVowelsLowRest("One two tHRee world"); //test the capsVowels
-       //System.out.println(capVowels);
+       String capVowels =  capVowelsLowRest(" one two tHRee world"); //test the capsVowels
+       System.out.println(capVowels);
 
 
-       String camelCase = camelCase(" tWo    wordS hh");  //test the camelCase 
-       System.out.println(camelCase); //test for camelCase
+       String camelCase = camelCase("Hello  World");  //test the camelCase 
+       //System.out.println(camelCase); //test for camelCase
 
 
        //System.out.println(capVowels);
@@ -47,7 +47,7 @@ public class StringOps {
 
     public static String capVowelsLowRest (String string) {
         String vowels = "aeiou"; // containing the vowels as one string 
-        String str = ""; // empty string for store the new string 
+        String str = "";  // empty string for store the new string 
 
 
         //loop that run on the string and check if the specific char is match what we looking for 
@@ -75,17 +75,14 @@ public class StringOps {
         char first = string.charAt(0); 
         if ( first == ' ') {
             first = string.charAt(1);
-        } else {
+        } else  if ( first >= 'A' || first <= 'Z'){
+            first = (char) (first + 32); 
             s+=first; // insert the first letter to the return string
 
         }
+        
 
-        
-        
-         
-        
-        
-        
+
 
         // create a string without space and after then change the first letter each word to uppercase 
         for ( int i = 1; i < string.length(); i++) {
@@ -93,16 +90,16 @@ public class StringOps {
             if ( c  >= 'A'  && c <= 'Z') {
                 s+= (char) (string.charAt(i) + 32);
             } else if ( c > 'Z' && string.charAt(i-1) == ' ') {
-                s+= (char) (c -32); 
+                s+= (char) (c - 32); 
             }else if ( c == ' ') {
-                if ( string.charAt(0) == c) {
-
+                if ( c == ' ') {
+                    continue; 
                 }
-                continue; 
+                
             }else{
                 s+=c; 
             }
-            
+
         
         }
 
