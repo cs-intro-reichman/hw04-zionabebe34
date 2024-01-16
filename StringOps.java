@@ -22,12 +22,12 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-       String capVowels =  capVowelsLowRest(" one two tHRee world"); //test the capsVowels
-       System.out.println(capVowels);
+       //String capVowels =  capVowelsLowRest(" one two tHRee world"); //test the capsVowels
+       //System.out.println(capVowels);
 
 
-       String camelCase = camelCase("Hello  World");  //test the camelCase 
-       //System.out.println(camelCase); //test for camelCase
+       String camelCase = camelCase(" tWo    wordS");  //test the camelCase 
+       System.out.println(camelCase); //test for camelCase
 
 
        //System.out.println(capVowels);
@@ -71,16 +71,23 @@ public class StringOps {
 
     public static String camelCase (String string) {
         String s = ""; 
-        //char first = (string.charAt(0) > 'Z')?((string.charAt(0)) ):( ( char) (string.charAt(0) + 32)) ; 
-        char first = string.charAt(0); 
-        if ( first == ' ') {
-            first = string.charAt(1);
-        } else  if ( first >= 'A' || first <= 'Z'){
-            first = (char) (first + 32); 
-            s+=first; // insert the first letter to the return string
-
+        if ( string.charAt(0) == ' ') {
+            string = string.substring(1); 
         }
+       
+
+        //case for the first letter in the string
+        char first = string.charAt(0); 
+        if ( first > 'Z') {
+            s+= first; 
+        } else if ( first >= 'A' || first <= 'Z') {
+            s+= (char) ( first - 32); 
+        }
+
+
+
         
+       
 
 
 
@@ -88,13 +95,15 @@ public class StringOps {
         for ( int i = 1; i < string.length(); i++) {
             char c = string.charAt(i); 
             if ( c  >= 'A'  && c <= 'Z') {
-                s+= (char) (string.charAt(i) + 32);
+                if ( string.charAt(i-1) == ' ') {
+                    s+=c;
+                } else {
+                    s+= (char) (string.charAt(i) + 32);
+                }
             } else if ( c > 'Z' && string.charAt(i-1) == ' ') {
                 s+= (char) (c - 32); 
             }else if ( c == ' ') {
-                if ( c == ' ') {
-                    continue; 
-                }
+                continue; 
                 
             }else{
                 s+=c; 
@@ -102,6 +111,9 @@ public class StringOps {
 
         
         }
+        
+
+         
 
         return s;
     }
