@@ -73,7 +73,8 @@ public class StringOps {
         String s = ""; 
         if ( string.charAt(0) == ' ') {
             string = string.substring(1); 
-        }
+        } 
+        
        
 
         //case for the first letter in the string
@@ -81,8 +82,9 @@ public class StringOps {
         if ( first > 'Z') {
             s+= first; 
         } else if ( first >= 'A' || first <= 'Z') {
-            s+= (char) ( first - 32); 
+            s+= (char) ( first + 32); 
         }
+        
 
 
 
